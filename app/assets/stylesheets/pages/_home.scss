@@ -4,9 +4,12 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 
   h1 {
-    font-size: 32px;
-    margin: 0;
+    font-size: 56px;
+    margin-bottom: 20px;
+    font-weight: bold;
   }
 }
