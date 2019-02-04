@@ -10,14 +10,14 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-hoist-item navbar-hoist-link" %>
-      <%= link_to "Trips", "#", class: "navbar-hoist-item navbar-hoist-link" %>
-      <%= link_to "Messages", "#", class: "navbar-hoist-item navbar-hoist-link" %>
+      <%#= link_to "nav-link", "#", class: "navbar-hoist-item navbar-hoist-link" %>
+      <%#= link_to "nav-link", "#", class: "navbar-hoist-item navbar-hoist-link" %>
+      <%#= link_to "nav-link", "#", class: "navbar-hoist-item navbar-hoist-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-hoist-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-hoist-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "https://raw.githubusercontent.com/sandrineay/placeholders/master/placeholder.jpg", class: "avatar dropdown-toggle", id: "navbar-hoist-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-hoist-dropdown-menu">
             <li>
               <%= link_to "#" do %>
