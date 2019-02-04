@@ -13,4 +13,7 @@
     color: white;
     box-shadow: 4px 4px $light-yellow;
   }
+  &:focus {
+    outline: none;
+  }
 }

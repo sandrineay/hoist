@@ -1,0 +1,42 @@
+// Bootstrap modal override
+
+.modal-content {
+  box-shadow: 4px 3px 9px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+body .modal-dialog {
+  text-align: left;
+  max-width: 100%;
+  width: auto !important;
+  display: inline-block;
+}
+
+.modal {
+  text-align: center;
+}
+
+// Form styling
+
+#new_user {
+  width: 290px;
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }
+  input:-webkit-autofill {
+    -webkit-text-fill-color: $dark-gray !important;
+  }
+  input {
+    font-size: 16px;
+  }
+}
+
+.form-btn {
+  margin-top: 15px;
+  width: 100%;
+}
