@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_09_163547) do
+ActiveRecord::Schema.define(version: 2019_02_09_164017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,64 @@ ActiveRecord::Schema.define(version: 2019_02_09_163547) do
     t.string "hull_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "hull_material"
+    t.string "rigging_type"
+    t.string "ballast_type"
+    t.string "keel_type"
+    t.string "windlass_type"
+    t.string "certification"
+    t.string "builder"
+    t.string "designer"
+    t.string "type"
+    t.string "class"
+    t.integer "cabins"
+    t.integer "double_berths"
+    t.integer "heads"
+    t.integer "length_on_deck"
+    t.integer "loa"
+    t.integer "lwl"
+    t.integer "beam"
+    t.integer "sail_area"
+    t.integer "max_draft"
+    t.integer "min_draft"
+    t.integer "displacement"
+    t.integer "ballast"
+    t.integer "comfort_ratio"
+    t.integer "cabin_headroom"
+    t.integer "dry_weight"
+    t.integer "max_bridge_clearance"
+    t.integer "rig_i"
+    t.integer "rig_j"
+    t.integer "rig_p"
+    t.integer "rig_e"
+    t.integer "rig_spl_tps"
+    t.integer "rig_isp"
+    t.string "fuel_type"
+    t.string "engine_make"
+    t.string "engine_model"
+    t.integer "horse_power"
+    t.string "engine_type"
+    t.string "drive_type"
+    t.string "propeller_type"
+    t.string "propeller_material"
+    t.integer "engine_hours"
+    t.integer "engine_year"
+    t.boolean "folding_propeller"
+    t.integer "holding_tank_capacity"
+    t.integer "holding_tank_number"
+    t.string "holding_tank_material"
+    t.integer "water_tank_capacity"
+    t.integer "water_tank_number"
+    t.string "water_tank_material"
+    t.integer "fuel_tank_capacity"
+    t.integer "fuel_tank_number"
+    t.string "fuel_tank_material"
+    t.integer "sa_disp"
+    t.integer "bal_disp"
+    t.integer "disp_len"
+    t.integer "first_built"
+    t.integer "last_built"
+    t.integer "number_built"
   end
 
   create_table "listing_prices", force: :cascade do |t|
