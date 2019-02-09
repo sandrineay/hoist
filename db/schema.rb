@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_02_123801) do
+ActiveRecord::Schema.define(version: 2019_02_09_163547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boat_profiles", force: :cascade do |t|
+    t.string "make"
+    t.string "model"
+    t.string "hull_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "listing_prices", force: :cascade do |t|
+    t.integer "ask_price"
+    t.string "currency"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "listing_id"
+    t.index ["listing_id"], name: "index_listing_prices_on_listing_id"
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.string "website"
+    t.integer "website_uid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "boat_profile_id"
+    t.index ["boat_profile_id"], name: "index_listings_on_boat_profile_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +54,6 @@ ActiveRecord::Schema.define(version: 2019_02_02_123801) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "listing_prices", "listings"
+  add_foreign_key "listings", "boat_profiles"
 end

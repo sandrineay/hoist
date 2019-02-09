@@ -1,0 +1,2 @@
+class BoatProfile < ApplicationRecord
+end
