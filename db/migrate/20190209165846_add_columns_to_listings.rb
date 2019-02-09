@@ -8,8 +8,8 @@ class AddColumnsToListings < ActiveRecord::Migration[5.2]
     add_column :listings, :certification, :string
     add_column :listings, :builder, :string
     add_column :listings, :designer, :string
-    add_column :listings, :type, :string
-    add_column :listings, :class, :string
+    add_column :listings, :boat_type, :string
+    add_column :listings, :boat_class, :string
     add_column :listings, :cabins, :integer
     add_column :listings, :double_berths, :integer
     add_column :listings, :heads, :integer

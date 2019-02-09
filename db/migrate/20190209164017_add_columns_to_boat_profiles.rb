@@ -8,8 +8,8 @@ class AddColumnsToBoatProfiles < ActiveRecord::Migration[5.2]
     add_column :boat_profiles, :certification, :string
     add_column :boat_profiles, :builder, :string
     add_column :boat_profiles, :designer, :string
-    add_column :boat_profiles, :type, :string
-    add_column :boat_profiles, :class, :string
+    add_column :boat_profiles, :boat_type, :string
+    add_column :boat_profiles, :boat_class, :string
     add_column :boat_profiles, :cabins, :integer
     add_column :boat_profiles, :double_berths, :integer
     add_column :boat_profiles, :heads, :integer
