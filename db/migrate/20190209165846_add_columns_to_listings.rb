@@ -13,25 +13,25 @@ class AddColumnsToListings < ActiveRecord::Migration[5.2]
     add_column :listings, :cabins, :integer
     add_column :listings, :double_berths, :integer
     add_column :listings, :heads, :integer
-    add_column :listings, :length_on_deck, :integer
-    add_column :listings, :loa, :integer
-    add_column :listings, :lwl, :integer
-    add_column :listings, :beam, :integer
-    add_column :listings, :sail_area, :integer
-    add_column :listings, :max_draft, :integer
-    add_column :listings, :min_draft, :integer
-    add_column :listings, :displacement, :integer
-    add_column :listings, :ballast, :integer
-    add_column :listings, :comfort_ratio, :integer
-    add_column :listings, :cabin_headroom, :integer
-    add_column :listings, :dry_weight, :integer
-    add_column :listings, :max_bridge_clearance, :integer
-    add_column :listings, :rig_i, :integer
-    add_column :listings, :rig_j, :integer
-    add_column :listings, :rig_p, :integer
-    add_column :listings, :rig_e, :integer
-    add_column :listings, :rig_spl_tps, :integer
-    add_column :listings, :rig_isp, :integer
+    add_column :listings, :length_on_deck, :float
+    add_column :listings, :loa, :float
+    add_column :listings, :lwl, :float
+    add_column :listings, :beam, :float
+    add_column :listings, :sail_area, :float
+    add_column :listings, :max_draft, :float
+    add_column :listings, :min_draft, :float
+    add_column :listings, :displacement, :float
+    add_column :listings, :ballast, :float
+    add_column :listings, :comfort_ratio, :float
+    add_column :listings, :cabin_headroom, :float
+    add_column :listings, :dry_weight, :float
+    add_column :listings, :max_bridge_clearance, :float
+    add_column :listings, :rig_i, :float
+    add_column :listings, :rig_j, :float
+    add_column :listings, :rig_p, :float
+    add_column :listings, :rig_e, :float
+    add_column :listings, :rig_spl_tps, :float
+    add_column :listings, :rig_isp, :float
     add_column :listings, :fuel_type, :string
     add_column :listings, :engine_make, :string
     add_column :listings, :engine_model, :string
@@ -43,18 +43,18 @@ class AddColumnsToListings < ActiveRecord::Migration[5.2]
     add_column :listings, :engine_hours, :integer
     add_column :listings, :engine_year, :integer
     add_column :listings, :folding_propeller, :boolean
-    add_column :listings, :holding_tank_capacity, :integer
+    add_column :listings, :holding_tank_capacity, :float
     add_column :listings, :holding_tank_number, :integer
     add_column :listings, :holding_tank_material, :string
-    add_column :listings, :water_tank_capacity, :integer
+    add_column :listings, :water_tank_capacity, :float
     add_column :listings, :water_tank_number, :integer
     add_column :listings, :water_tank_material, :string
-    add_column :listings, :fuel_tank_capacity, :integer
+    add_column :listings, :fuel_tank_capacity, :float
     add_column :listings, :fuel_tank_number, :integer
     add_column :listings, :fuel_tank_material, :string
-    add_column :listings, :sa_disp, :integer
-    add_column :listings, :bal_disp, :integer
-    add_column :listings, :disp_len, :integer
+    add_column :listings, :sa_disp, :float
+    add_column :listings, :bal_disp, :float
+    add_column :listings, :disp_len, :float
     add_column :listings, :first_built, :integer
     add_column :listings, :last_built, :integer
     add_column :listings, :number_built, :integer
