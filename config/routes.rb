@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "/profile", to: 'users#show'
 
   resources :users, only: :update
+  resources :boat_profiles, only: :index
 end

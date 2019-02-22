@@ -5,3 +5,5 @@
 <p><%= @boat_profile_count %> boat profiles.</p>
 <p><%= @listing_count %> boat listings.</p>
 <p><%= @listing_price_count %> price records.</p>
+
+<%= link_to "Download data", boat_profiles_path(format: :csv) %>
