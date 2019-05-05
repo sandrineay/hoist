@@ -6,4 +6,9 @@ Rails.application.routes.draw do
 
   resources :users, only: :update
   resources :boat_profiles, only: :index
+
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
