@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :update
   resources :boat_profiles, only: :index
+  resources :listings, only: [:index, :create]
 
   require "sidekiq/web"
   authenticate :user, lambda { |u| u.admin } do
