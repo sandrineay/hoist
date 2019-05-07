@@ -3,6 +3,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  a {
+    color: $dark-gray;
+    &:hover {
+      color: $dark-yellow;
+      text-decoration: none;
+    }
+  }
 }
 
 .big-numbers {

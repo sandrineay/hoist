@@ -10,8 +10,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%#= link_to "nav-link", "#", class: "navbar-hoist-item navbar-hoist-link" %>
-      <%#= link_to "nav-link", "#", class: "navbar-hoist-item navbar-hoist-link" %>
+      <%= link_to "Dashboard", dashboard_path, class: "navbar-hoist-item navbar-hoist-link" %>
+      <%= link_to "Boat Profiles", boat_profiles_path, class: "navbar-hoist-item navbar-hoist-link" %>
       <%#= link_to "nav-link", "#", class: "navbar-hoist-item navbar-hoist-link" %>
 
       <!-- Avatar with dropdown menu -->

@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Boat Profiles</h1>
+
+  <div class="list-header">
+    <div class="item-title">
+      Model
+    </div>
+    <div class="item-detail-1">
+      Make
+    </div>
+    <div class="item-detail-2">
+      First Built
+    </div>
+  </div>
+  <% @boat_profiles.each do |boat_profile| %>
+    <div class="list-item">
+      <div class="item-title">
+        <%= boat_profile.model.capitalize %>
+      </div>
+      <div class="item-detail-1">
+        <%= boat_profile.make %>
+      </div>
+      <div class="item-detail-2">
+        <%= boat_profile.first_built %>
+      </div>
+    </div>
+  <% end %>
+</div>

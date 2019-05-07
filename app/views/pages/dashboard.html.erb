@@ -2,10 +2,12 @@
   <h1>Dashboard</h1>
 
   <div class="dashboard-numbers">
-    <div class='text-center dashboard-number'>
-      <p class="big-numbers"><%= @boat_profile_count %></p>
-      <p>boat profiles</p>
-    </div>
+    <%= link_to boat_profiles_path do %>
+      <div class='text-center dashboard-number'>
+        <p class="big-numbers"><%= @boat_profile_count %></p>
+        <p>boat profiles</p>
+      </div>
+    <% end %>
     <div class='text-center dashboard-number'>
       <p class="big-numbers"><%= @listing_count %></p>
       <p>boat listings</p>
@@ -16,6 +18,6 @@
     </div>
   </div>
 
-  <%= link_to "Download data as a CSV", boat_profiles_path(format: :csv), class: 'yellow-button' %>
+  <%= link_to "Download data as a CSV", download_path(format: :csv), class: 'yellow-button' %>
 </div>
 

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/dashboard", to: 'pages#dashboard'
   get "/profile", to: 'users#show'
+  get "/download", to: 'boat_profiles#download'
 
   resources :users, only: :update
   resources :boat_profiles, only: :index

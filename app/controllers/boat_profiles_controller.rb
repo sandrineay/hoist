@@ -1,6 +1,10 @@
 class BoatProfilesController < ApplicationController
   def index
     @boat_profiles = BoatProfile.all
+  end
+
+  def download
+    @boat_profiles = BoatProfile.all
 
     respond_to do |format|
       format.html
