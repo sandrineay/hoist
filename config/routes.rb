@@ -1,3 +1,5 @@
+# require "sidekiq/web"
+
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
@@ -8,8 +10,7 @@ Rails.application.routes.draw do
   resources :boat_profiles, only: :index
   resources :listings, only: [:index, :create]
 
-  require "sidekiq/web"
-  authenticate :user, lambda { |u| u.admin } do
-    mount Sidekiq::Web => '/sidekiq'
-  end
+  # authenticate :user, lambda { |u| u.admin } do
+  #   mount Sidekiq::Web => '/sidekiq'
+  # end
 end

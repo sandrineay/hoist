@@ -2,6 +2,15 @@ body {
   color: $dark-gray;
 }
 
+h1 {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+p {
+  font-size: 16px;
+}
+
 .component-center {
   display: flex;
   justify-content: space-around;

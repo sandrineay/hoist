@@ -1,9 +1,21 @@
-<h1>Dashboard</h1>
+<div class="container">
+  <h1>Dashboard</h1>
 
-<p>Lots of fancy graphs and figures about sailboats.</p>
+  <div class="dashboard-numbers">
+    <div class='text-center dashboard-number'>
+      <p class="big-numbers"><%= @boat_profile_count %></p>
+      <p>boat profiles</p>
+    </div>
+    <div class='text-center dashboard-number'>
+      <p class="big-numbers"><%= @listing_count %></p>
+      <p>boat listings</p>
+    </div>
+    <div class='text-center dashboard-number'>
+      <p class="big-numbers"><%= @listing_price_count %></p>
+      <p>price records</p>
+    </div>
+  </div>
 
-<p><%= @boat_profile_count %> boat profiles.</p>
-<p><%= @listing_count %> boat listings.</p>
-<p><%= @listing_price_count %> price records.</p>
+  <%= link_to "Download data as a CSV", boat_profiles_path(format: :csv), class: 'yellow-button' %>
+</div>
 
-<%= link_to "Download data", boat_profiles_path(format: :csv) %>

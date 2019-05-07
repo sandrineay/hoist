@@ -8,5 +8,6 @@ class PagesController < ApplicationController
     @boat_profile_count = BoatProfile.count
     @listing_count = Listing.count
     @listing_price_count = ListingPrice.count
+    @boats = BoatProfile.all
   end
 end
