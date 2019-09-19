@@ -3,6 +3,10 @@ class BoatProfilesController < ApplicationController
     @boat_profiles = BoatProfile.all
   end
 
+  def show
+    @boat_profile = BoatProfile.find(params[:id])
+  end
+
   def download
     @boat_profiles = BoatProfile.all
 

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/download", to: 'boat_profiles#download'
 
   resources :users, only: :update
-  resources :boat_profiles, only: :index
+  resources :boat_profiles, only: [:index, :show]
   resources :listings, only: [:index, :create]
 
   # authenticate :user, lambda { |u| u.admin } do

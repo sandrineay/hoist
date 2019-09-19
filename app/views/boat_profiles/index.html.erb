@@ -13,16 +13,18 @@
     </div>
   </div>
   <% @boat_profiles.each do |boat_profile| %>
-    <div class="list-item">
-      <div class="item-title">
-        <%= boat_profile.model.capitalize %>
+    <%= link_to boat_profile_path(boat_profile), class: 'list-item-link' do %>
+      <div class="list-item">
+        <div class="item-title">
+          <%= boat_profile.model.capitalize %>
+        </div>
+        <div class="item-detail-1">
+          <%= boat_profile.make %>
+        </div>
+        <div class="item-detail-2">
+          <%= boat_profile.first_built %>
+        </div>
       </div>
-      <div class="item-detail-1">
-        <%= boat_profile.make %>
-      </div>
-      <div class="item-detail-2">
-        <%= boat_profile.first_built %>
-      </div>
-    </div>
+    <% end %>
   <% end %>
 </div>

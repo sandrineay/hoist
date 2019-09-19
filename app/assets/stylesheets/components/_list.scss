@@ -21,3 +21,11 @@
 .item-detail-2 {
   flex-basis: 20%;
 }
+
+.list-item-link {
+  color: $dark-gray;
+  &:hover {
+    color: $dark-yellow;
+    text-decoration: none;
+  }
+}
