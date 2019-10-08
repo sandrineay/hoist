@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_10_112820) do
+ActiveRecord::Schema.define(version: 2019_10_08_140202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -161,6 +161,8 @@ ActiveRecord::Schema.define(version: 2019_02_10_112820) do
     t.string "condition"
     t.string "tax_status"
     t.integer "year"
+    t.string "make"
+    t.string "model"
     t.index ["boat_profile_id"], name: "index_listings_on_boat_profile_id"
   end
 

@@ -3,15 +3,16 @@ require 'nokogiri'
 
 # Creating listing profiles
 
-puts 'Scraping catamarans'
+# puts 'Scraping all sailboat listings'
 
-for number in 1..2
-  puts "Scraping page #{number}"
-  url = "https://www.boats.com/boats-for-sale/?activity=sailing&length=&price=&boat-type=sail&class=sail-catamaran&page=#{number}"
-  html_doc = Nokogiri::HTML(open(url).read)
-  urls = html_doc.search('#listings-srp a[data-reporting-click-listing-type]').map{ |url| 'https://www.boats.com' + url.attribute('href').value }
+# for number in 1..2 # out of 625 pages
+#   puts "Scraping page #{number}"
+#   url = "https://www.boats.com/boats-for-sale/?activity=sailing&length=&price=&page=#{number}"
+#   html_doc = Nokogiri::HTML(open(url).read)
+#   urls = html_doc.search('#listings-srp a[data-reporting-click-listing-type]').map{ |url| 'https://www.boats.com' + url.attribute('href').value }
 
-  urls.each do |url|
+#   urls.each do |url|
+    url = "https://www.boats.com/sailing-boats/1994-tartan-3500-7209143"
     html_doc = Nokogiri::HTML(open(url).read)
     data = {}
 
@@ -19,22 +20,43 @@ for number in 1..2
     data['currency'] = price.split(/\d/).first
     data['ask_price'] = price.chars.select{|char| char =~ /\d/}.join.to_i
 
+    details_data = {}
+    details = html_doc.search('#boat-details table tr')
+    details.each do |detail|
+      details_data[detail.search('th').text.downcase.parameterize(separator: "_")] = detail.search('td').text.downcase
+    end
 
-    listing = Listing.create(
-      website: 'https://www.boats.com',
-      website_uid: url.split('-').last.delete_suffix('/').to_i,
-      url: url
-    )
+    # Left to use in details_data: "length"
 
-    listing_price = ListingPrice.create(
-      listing: listing,
-      ask_price: data['ask_price'],
-      currency: data['currency']
-    )
+    measurements = html_doc.search('#measurements table tr')
+    measurements.each do |measurement|
+      details_data[measurement.search('th').text.downcase.parameterize(separator: "_")] = measurement.search('td').text.downcase
+    end
 
-    puts "#{listing}"
+    puts details_data
 
-    # t.string "hull_material"
+    # listing = Listing.create(
+    #   website: 'https://www.boats.com',
+    #   website_uid: url.split('-').last.delete_suffix('/').to_i,
+    #   url: url,
+    #   make: details_data['make'],
+    #   model: details_data['model'],
+    #   year: details_data['year'],
+    #   condition: details_data['condition'],
+    #   boat_type: details_data['type'],
+    #   boat_class: details_data['class'],
+    #   fuel_type: details_data['fuel_type'],
+    #   hull_material: details_data['hull_material'],
+    #   location: details_data['location'],
+    #   tax_status: details_data['tax_status']
+    # )
+
+    # listing_price = ListingPrice.create(
+    #   listing: listing,
+    #   ask_price: data['ask_price'],
+    #   currency: data['currency']
+    # )
+
     # t.string "rigging_type"
     # t.string "ballast_type"
     # t.string "keel_type"
@@ -42,8 +64,6 @@ for number in 1..2
     # t.string "certification"
     # t.string "builder"
     # t.string "designer"
-    # t.string "boat_type"
-    # t.string "boat_class"
     # t.integer "cabins"
     # t.integer "double_berths"
     # t.integer "heads"
@@ -66,7 +86,6 @@ for number in 1..2
     # t.float "rig_e"
     # t.float "rig_spl_tps"
     # t.float "rig_isp"
-    # t.string "fuel_type"
     # t.string "engine_make"
     # t.string "engine_model"
     # t.integer "horse_power"
@@ -92,13 +111,13 @@ for number in 1..2
     # t.integer "first_built"
     # t.integer "last_built"
     # t.integer "number_built"
-    # t.string "location"
     # t.string "seller"
-    # t.string "condition"
-    # t.string "tax_status"
-    # t.integer "year"
-  end
-end
+
+    puts "Done!"
+  #end
+
+  #puts "Done scraping page #{number}. Created #{Listing.count} listings and #{ListingPrice.count} ListingPrices so far!"
+# end
 
 # Creating sailboat profiles
 
